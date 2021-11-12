@@ -1,0 +1,6 @@
+Card Name
+Rarity: Very Common, Common, Uncommon, Rare, Super Rare, Legendary, Epic, Mythic, Unique
+Star Level: 1-10
+Series: Name of series
+
+ 
