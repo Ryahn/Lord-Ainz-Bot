@@ -1,5 +1,5 @@
 const mongoose = require("mongoose"),
-    config = require("../../../config/config.json");
+    config = require("../../../config/config");
 
 module.exports = mongoose.model(
     "Guild",

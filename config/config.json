@@ -1,0 +1,11 @@
+{
+    "TOKEN": "OTA4MDc2NDY3MTEwNDE2Mzg1.YYweHQ.v_Z6rlhAMcIg4MP3Geg7s69xLcQ",
+    "PREFIX": "$$",
+    "OWNERS": ["72884988374167552"],
+    "EMBEDCOLOR": "#b33737",
+    "FOOTER": "Made by AinzOoalGown#3496",
+    "ADMINROLE": "Lord Ainz Minion",
+    "BUGCHANNEL": "",
+    "MONGOOSE": "mongodb://localhost:27017/bot_db",
+    "LOCALE": "en"
+}
