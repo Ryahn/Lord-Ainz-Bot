@@ -1,11 +1,11 @@
 const { ShardingManager } = require("discord.js");
-const config = require("./config/config");
+const config = require("./config/config.json");
 const logger = require("./lib/logger/logger");
 const chalk = require("chalk");
 
 // Create sharding manager and pass in token
 // totalShards recommends using auto
-const manager = new ShardingManager("./index.js", {
+const manager = new ShardingManager("./index-dev.js", {
     token: config.token,
     totalShards: "auto",
 });
