@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"name": "SRC",
+			"path": "./src"
+		},
+		{
+			"name": "Root",
+			"path": "."
+		},
+		{
+			"name": "template",
+			"path": "./switchblade"
+		}
+	],
+	"settings": {
+	}
+}

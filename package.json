@@ -1,6 +1,6 @@
 {
-    "name": "bot",
-    "version": "1.0.0",
+    "name": "lordainzbot",
+    "version": "0.1.0",
     "description": "--- <br>",
     "main": "index.js",
     "directories": {
@@ -19,12 +19,14 @@
         "url": "git+https://github.com/Ryahn/Lord-Ainz-Bot.git"
     },
     "author": "",
-    "license": "ISC",
+    "license": "MIT",
     "bugs": {
         "url": "https://github.com/Ryahn/Lord-Ainz-Bot/issues"
     },
     "homepage": "https://github.com/Ryahn/Lord-Ainz-Bot#readme",
     "dependencies": {
+        "@sentry/node": "^6.15.0",
+        "@sentry/tracing": "^6.15.0",
         "chalk": "^4.1.2",
         "discord.js": "^13.3.1",
         "glob": "^7.2.0",

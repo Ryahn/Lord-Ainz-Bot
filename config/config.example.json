@@ -1,11 +1,17 @@
 {
     "TOKEN": "",
-    "PREFIX": "$$",
-    "OWNERS": [""],
+    "PREFIX": "$$!",
+    "OWNERS": "",
     "EMBEDCOLOR": "#b33737",
     "FOOTER": "Made by AinzOoalGown#3496",
     "ADMINROLE": "Lord Ainz Minion",
     "BUGCHANNEL": "",
     "MONGOOSE": "mongodb://localhost:27017/bot_db",
-    "LOCALE": "en"
+    "LOCALE": "en",
+    "SENTRY": {
+        "DSN": "",
+        "DEBUG": true,
+        "ENV": "development",
+        "RATE": 1.0
+    }
 }
