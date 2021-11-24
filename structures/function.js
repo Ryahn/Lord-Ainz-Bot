@@ -1,7 +1,7 @@
 module.exports = {
     parseTime(time) {
         const regex = /\d+\.*\d*\D+/g;
-        time = time.split(/\s+/).join("");
+        time = time.split(/\s+/).join('');
         let res;
         let duration = 0;
         while ((res = regex.exec(time)) !== null) {
@@ -10,44 +10,44 @@ module.exports = {
             }
             const local = res[0].toLowerCase();
             if (
-                local.endsWith("seconds") ||
-                local.endsWith("second") ||
-                (local.endsWith("s") && local.match(/\D+/)[0].length === 1)
+                local.endsWith('seconds') ||
+                local.endsWith('second') ||
+                (local.endsWith('s') && local.match(/\D+/)[0].length === 1)
             ) {
                 duration += parseInt(local.match(/\d+\.*\d*/)[0], 10) * 1000;
             } else if (
-                local.endsWith("minutes") ||
-                local.endsWith("minute") ||
-                (local.endsWith("m") && local.match(/\D+/)[0].length === 1)
+                local.endsWith('minutes') ||
+                local.endsWith('minute') ||
+                (local.endsWith('m') && local.match(/\D+/)[0].length === 1)
             ) {
                 duration += parseInt(local.match(/\d+\.*\d*/)[0], 10) * 60000;
             } else if (
-                local.endsWith("hours") ||
-                local.endsWith("hour") ||
-                (local.endsWith("h") && local.match(/\D+/)[0].length === 1)
+                local.endsWith('hours') ||
+                local.endsWith('hour') ||
+                (local.endsWith('h') && local.match(/\D+/)[0].length === 1)
             ) {
                 duration += parseInt(local.match(/\d+\.*\d*/)[0], 10) * 3600000;
             } else if (
-                local.endsWith("days") ||
-                local.endsWith("day") ||
-                (local.endsWith("d") && local.match(/\D+/)[0].length === 1)
+                local.endsWith('days') ||
+                local.endsWith('day') ||
+                (local.endsWith('d') && local.match(/\D+/)[0].length === 1)
             ) {
                 duration +=
                     parseInt(local.match(/\d+\.*\d*/)[0], 10) * 86400000;
             } else if (
-                local.endsWith("weeks") ||
-                local.endsWith("week") ||
-                (local.endsWith("w") && local.match(/\D+/)[0].length === 1)
+                local.endsWith('weeks') ||
+                local.endsWith('week') ||
+                (local.endsWith('w') && local.match(/\D+/)[0].length === 1)
             ) {
                 duration +=
                     parseInt(local.match(/\d+\.*\d*/)[0], 10) * 604800000;
-            } else if (local.endsWith("months") || local.endsWith("month")) {
+            } else if (local.endsWith('months') || local.endsWith('month')) {
                 duration +=
                     parseInt(local.match(/\d+\.*\d*/)[0], 10) * 2628000000;
             } else if (
-                local.endsWith("years") ||
-                local.endsWith("year") ||
-                (local.endsWith("y") && local.match(/\D+/)[0].length === 1)
+                local.endsWith('years') ||
+                local.endsWith('year') ||
+                (local.endsWith('y') && local.match(/\D+/)[0].length === 1)
             ) {
                 duration +=
                     parseInt(local.match(/\d+\.*\d*/)[0], 10) * 31557600000;
@@ -61,12 +61,12 @@ module.exports = {
     formatTime(milliseconds, minimal = false) {
         if (!milliseconds || isNaN(milliseconds) || milliseconds <= 0) {
             throw new RangeError(
-                "Utils#formatTime(milliseconds: number) Milliseconds must be a number greater than 0"
+                'Utils#formatTime(milliseconds: number) Milliseconds must be a number greater than 0'
             );
         }
-        if (typeof minimal !== "boolean") {
+        if (typeof minimal !== 'boolean') {
             throw new RangeError(
-                "Utils#formatTime(milliseconds: number, minimal: boolean) Minimal must be a boolean"
+                'Utils#formatTime(milliseconds: number, minimal: boolean) Minimal must be a boolean'
             );
         }
         const times = {
@@ -117,9 +117,9 @@ module.exports = {
                 finalTime.push(`${v} ${v > 1 ? k : k.slice(0, -1)}`);
             }
         }
-        let time = finalTime.join(minimal ? ":" : ", ");
-        if (time.includes(",")) {
-            const pos = time.lastIndexOf(",");
+        let time = finalTime.join(minimal ? ':' : ', ');
+        if (time.includes(',')) {
+            const pos = time.lastIndexOf(',');
             time = `${time.slice(0, pos)} and ${time.slice(pos + 1)}`;
         }
         return time;
@@ -128,7 +128,7 @@ module.exports = {
         if (isNaN(Number(size))) return null;
         const genRanHex = [...Array(size)]
             .map(() => Math.floor(Math.random() * 16).toString(16))
-            .join("");
+            .join('');
         return genRanHex;
     },
 };

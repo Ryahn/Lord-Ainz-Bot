@@ -5,3 +5,4 @@ test.js
 test.json
 node_modules
 config/config.json
+$HOME

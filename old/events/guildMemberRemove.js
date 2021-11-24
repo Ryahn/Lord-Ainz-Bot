@@ -12,9 +12,9 @@ module.exports = async (client, member) => {
 
         let goodbyeMsg =
             guildData.addons.goodbye.message === null ||
-            guildData.addons.goodbye.message === "" ||
-            guildData.addons.goodbye.message === " "
-                ? "{user.ping} has left the server!"
+            guildData.addons.goodbye.message === '' ||
+            guildData.addons.goodbye.message === ' '
+                ? '{user.ping} has left the server!'
                 : guildData.addons.goodbye.message; // Get the custom message or use the preset one
 
         // Replace all valid tags

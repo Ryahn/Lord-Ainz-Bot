@@ -1,11 +1,11 @@
 module.exports = {
-    name: "setprefix",
-    usage: ["Set the prefix for your server```{prefix}setprefix <prefix>```"],
+    name: 'setprefix',
+    usage: ['Set the prefix for your server```{prefix}setprefix <prefix>```'],
     enabled: true,
-    aliases: ["prefix"],
-    category: "Admin",
-    memberPermissions: ["ADMINISTRATOR"],
-    botPermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
+    aliases: ['prefix'],
+    category: 'Admin',
+    memberPermissions: ['ADMINISTRATOR'],
+    botPermissions: ['SEND_MESSAGES', 'EMBED_LINKS'],
     //Settings for command
     nsfw: false,
     ownerOnly: false,
@@ -17,7 +17,7 @@ module.exports = {
             if (!args[0]) {
                 return client.embed.usage(message, data);
             }
-            let prefix = args.join(" ");
+            let prefix = args.join(' ');
             data.guild.prefix = prefix;
             await data.guild.save();
             message.guild.prefix = prefix.toLowerCase();
@@ -35,7 +35,7 @@ module.exports = {
                 author: {
                     name: `Uh Oh!`,
                     icon_url: `${message.author.displayAvatarURL()}`,
-                    url: "",
+                    url: '',
                 },
             });
         }

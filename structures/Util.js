@@ -1,10 +1,10 @@
-const path = require("path");
-const { promisify } = require("util");
-const glob = promisify(require("glob"));
-const Command = require("./Command.js");
-const Event = require("./Event.js");
-const logger = require("../lib/logger/logger");
-const chalk = require("chalk");
+const path = require('path');
+const { promisify } = require('util');
+const glob = promisify(require('glob'));
+const Command = require('./Command.js');
+const Event = require('./Event.js');
+const logger = require('../lib/logger/logger');
+const chalk = require('chalk');
 
 module.exports = class Util {
     constructor(bot) {
@@ -13,14 +13,14 @@ module.exports = class Util {
 
     isClass(input) {
         return (
-            typeof input === "function" &&
-            typeof input.prototype === "object" &&
-            input.toString().substring(0, 5) === "class"
+            typeof input === 'function' &&
+            typeof input.prototype === 'object' &&
+            input.toString().substring(0, 5) === 'class'
         );
     }
 
     get directory() {
-        return `${path.resolve("./")}${path.sep}`;
+        return `${path.resolve('./')}${path.sep}`;
     }
 
     async loadCommands() {
@@ -32,7 +32,7 @@ module.exports = class Util {
                 if (!this.isClass(File)) {
                     logger.error(
                         `${chalk.bgRedBright.black(
-                            "[COMMAND]"
+                            '[COMMAND]'
                         )} Command ${name} doesn't export a class.`
                     );
                     throw new TypeError(
@@ -43,7 +43,7 @@ module.exports = class Util {
                 if (!(command instanceof Command)) {
                     logger.error(
                         `${chalk.bgRedBright.black(
-                            "[COMMAND]"
+                            '[COMMAND]'
                         )} Command ${name} doesnt belong in Commands.`
                     );
                     throw new TypeError(
@@ -64,7 +64,7 @@ module.exports = class Util {
                 if (!this.isClass(File)) {
                     logger.error(
                         `${chalk.bgRedBright.black(
-                            "[EVENT]"
+                            '[EVENT]'
                         )} Event ${name} doesn't export a class!`
                     );
                     throw new TypeError(
@@ -75,7 +75,7 @@ module.exports = class Util {
                 if (!(event instanceof Event)) {
                     logger.error(
                         `${chalk.bgRedBright.black(
-                            "[EVENT]"
+                            '[EVENT]'
                         )} Event ${name} doesn't belong in Events`
                     );
                     throw new TypeError(

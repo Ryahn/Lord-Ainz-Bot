@@ -12,9 +12,9 @@ module.exports = async (client, member) => {
 
         let welcomeMsg =
             guildData.addons.welcome.message === null ||
-            guildData.addons.welcome.message === "" ||
-            guildData.addons.welcome.message === " "
-                ? "Welcome {user.ping} to {guild.name}!"
+            guildData.addons.welcome.message === '' ||
+            guildData.addons.welcome.message === ' '
+                ? 'Welcome {user.ping} to {guild.name}!'
                 : guildData.addons.welcome.message; // Get the custom message or use the preset one
 
         // Replace all valid tags

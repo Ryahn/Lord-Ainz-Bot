@@ -1,7 +1,7 @@
-let { connect, Promise, connection } = require("mongoose");
-const logger = require("../lib/logger/logger");
-const chalk = require("chalk");
-const config = require("../config/config.json");
+let { connect, Promise, connection } = require('mongoose');
+const logger = require('../lib/logger/logger');
+const chalk = require('chalk');
+const config = require('../config/config.json');
 
 module.exports = {
     init: () => {
@@ -17,25 +17,25 @@ module.exports = {
         connect(config.MONGOOSE, dbOptions);
         Promise = global.Promise;
 
-        connection.on("connected", () => {
+        connection.on('connected', () => {
             logger.info(
                 `${chalk.magentaBright(
-                    "[DATABASE]"
+                    '[DATABASE]'
                 )} Connected to MongoDB Successfully!`
             );
         });
 
-        connection.on("err", (err) => {
+        connection.on('err', (err) => {
             logger.error(
                 `${chalk.magentaBright(
-                    "[DATABASE]"
+                    '[DATABASE]'
                 )} Error Occured From MongoDB: \n${err.message}`
             );
         });
 
-        connection.on("disconnected", () => {
+        connection.on('disconnected', () => {
             logger.warn(
-                `${chalk.magentaBright("[DATABASE]")} Connection Disconnected!`
+                `${chalk.magentaBright('[DATABASE]')} Connection Disconnected!`
             );
         });
     },

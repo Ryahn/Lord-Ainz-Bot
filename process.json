@@ -1,0 +1,20 @@
+{
+    "apps": [
+        {
+            "name": "lord-ainz-bot-master",
+            "script": "./shard.js",
+            "instances": 1,
+            "exec_mode": "cluster",
+            "watch": false,
+            "max_memory_restart": "3G",
+            "log_date_format": "YYYY-MM-DD-HH:mm:ss",
+            "error_file": "$HOME/.pm2/logs/error.log",
+            "out_file": "$HOME/.pm2/logs/out.log",
+            "combine_logs": true,
+            "merge_logs": true,
+            "pid_file": "$HOME/.pm2/logs/ainz.pid",
+            "max_restarts": 5,
+            "autorestart": true
+        }
+    ]
+}

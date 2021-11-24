@@ -1,14 +1,14 @@
 module.exports = {
-    name: "help",
+    name: 'help',
     usage: [
-        "Get a list of the currently available commands ```{prefix}help```",
-        "Get information about a specific command```{prefix}help <command>```",
+        'Get a list of the currently available commands ```{prefix}help```',
+        'Get information about a specific command```{prefix}help <command>```',
     ],
     enabled: true,
     aliases: [],
-    category: "General",
+    category: 'General',
     memberPermissions: [],
-    botPermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
+    botPermissions: ['SEND_MESSAGES', 'EMBED_LINKS'],
     //Settings for command
     nsfw: false,
     ownerOnly: false,
@@ -27,33 +27,33 @@ module.exports = {
                 : null;
             if (cmd) {
                 let aliaseList =
-                    cmd.aliases.length < 1 ? "None" : cmd.aliases.join("\n");
+                    cmd.aliases.length < 1 ? 'None' : cmd.aliases.join('\n');
                 return client.embed.send(message, {
-                    color: "RANDOM",
+                    color: 'RANDOM',
                     title: `${
                         cmd.name.charAt(0).toUpperCase() + cmd.name.slice(1)
                     } Command`,
                     author: {
                         name: `Alita's Help Menu`,
                         icon_url: `${message.client.user.displayAvatarURL()}`,
-                        url: "",
+                        url: '',
                     },
                     fields: [
                         {
-                            name: "__Aliases__",
+                            name: '__Aliases__',
                             value: `${aliaseList}`,
                         },
                         {
-                            name: "__Cooldown__",
+                            name: '__Cooldown__',
                             value: `${cmd.cooldown / 1000} Seconds`,
                         },
                         {
-                            name: "__Usage__",
+                            name: '__Usage__',
                             value: `${cmd.usage
                                 .map((x) =>
                                     x.replace(/{prefix}/g, data.guild.prefix)
                                 )
-                                .join("\n")}`,
+                                .join('\n')}`,
                         },
                     ],
                 });
@@ -70,7 +70,7 @@ module.exports = {
                     .filter((x) => x.category === category)
                     .map((x) => x.name);
                 let cmdText =
-                    commands.length < 1 ? "None" : commands.join(", ");
+                    commands.length < 1 ? 'None' : commands.join(', ');
                 let obj = {
                     name: category,
                     value: `\`\`\`${cmdText}\`\`\``,
@@ -97,7 +97,7 @@ module.exports = {
                 author: {
                     name: `Uh Oh!`,
                     icon_url: `${message.author.displayAvatarURL()}`,
-                    url: "",
+                    url: '',
                 },
             });
         }

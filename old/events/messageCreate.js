@@ -1,5 +1,5 @@
-const config = require("../config/config"),
-    chalk = require("chalk"),
+const config = require('../config/config'),
+    chalk = require('chalk'),
     cmdCooldown = {};
 
 module.exports = async (client, message) => {
@@ -66,13 +66,13 @@ module.exports = async (client, message) => {
             )
         ) {
             client.logger.info(
-                `${chalk.cyanBright("[COMMAND]")} ${message.author.tag} used ${
+                `${chalk.cyanBright('[COMMAND]')} ${message.author.tag} used ${
                     cmd.name
                 } - Missing permissions`
             );
             return message.channel.send(
                 "Looks like you're missing the following permissions:\n" +
-                    userPerms.map((p) => `\`${p}\``).join(", ")
+                    userPerms.map((p) => `\`${p}\``).join(', ')
             );
         }
 
@@ -86,13 +86,13 @@ module.exports = async (client, message) => {
         //If client permissions arraylist length is more than one return error
         if (clientPerms.length > 0) {
             client.logger.info(
-                `${chalk.cyanBright("[COMMAND]")} ${message.author.tag} used ${
+                `${chalk.cyanBright('[COMMAND]')} ${message.author.tag} used ${
                     cmd.name
                 } - Missing permissions`
             );
             return message.channel.send(
                 "Looks like I'm missing the following permissions:\n" +
-                    clientPerms.map((p) => `\`${p}\``).join(", ")
+                    clientPerms.map((p) => `\`${p}\``).join(', ')
             );
         }
 
@@ -126,7 +126,7 @@ module.exports = async (client, message) => {
         //Execute the command and log the user in console
         cmd.execute(client, message, args, data);
         client.logger.info(
-            `${chalk.cyanBright("[COMMAND]")} ${message.author.tag} used ${
+            `${chalk.cyanBright('[COMMAND]')} ${message.author.tag} used ${
                 cmd.name
             }`
         );

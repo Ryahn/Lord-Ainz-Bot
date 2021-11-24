@@ -1,18 +1,18 @@
-const tools = require("../../lib/tools/tools");
+const tools = require('../../lib/tools/tools');
 module.exports = {
-    name: "clanbattle",
+    name: 'clanbattle',
     usage: [
-        "Start a clan battle```{prefix}clanbattle @fighter1,@fighter1 numOfRounds```",
+        'Start a clan battle```{prefix}clanbattle @fighter1,@fighter1 numOfRounds```',
     ],
     enabled: true,
-    aliases: ["cb", "clanb", "cbattle"],
-    category: "AniGame",
+    aliases: ['cb', 'clanb', 'cbattle'],
+    category: 'AniGame',
     memberPermissions: [],
     botPermissions: [
-        "SEND_MESSAGES",
-        "EMBED_LINKS",
-        "MANAGE_MESSAGES",
-        "READ_MESSAGE_HISTORY",
+        'SEND_MESSAGES',
+        'EMBED_LINKS',
+        'MANAGE_MESSAGES',
+        'READ_MESSAGE_HISTORY',
     ],
     //Settings for command
     nsfw: false,
@@ -22,8 +22,8 @@ module.exports = {
     // Execute contains content for the command
     async execute(client, message, args, data) {
         const phrases = [
-            "**Fight Request ⚔️**",
-            "**__PvP Challenge - AinzOoalGown VS Legend47__**",
+            '**Fight Request ⚔️**',
+            '**__PvP Challenge - AinzOoalGown VS Legend47__**',
         ];
         function multiSearchOr(text, searchWords) {
             if (text && searchWords) {
@@ -50,13 +50,13 @@ module.exports = {
                 return false;
             }
 
-            return "Error: Props are missing";
+            return 'Error: Props are missing';
         }
 
         try {
             if (!args[0] & !args[1])
                 return message.reply({
-                    content: "please state `@fighter1,@fighter2` numOfRounds",
+                    content: 'please state `@fighter1,@fighter2` numOfRounds',
                     allowedMentions: { repliedUser: false },
                 });
 
@@ -78,7 +78,7 @@ module.exports = {
             );
 
             // // fires when a response is collected
-            collector.on("collect", async (msg) => {
+            collector.on('collect', async (msg) => {
                 msg.embeds.forEach((embed) => {
                     if (multiSearchOr(embed.title, phrases)) {
                         console.log(msg.channel.content);
@@ -88,9 +88,9 @@ module.exports = {
             });
 
             // // fires when the collector is finished collecting
-            collector.on("end", (collected, reason) => {
+            collector.on('end', (collected, reason) => {
                 // only send a message when the "end" event fires because of timeout
-                if (reason === "time") {
+                if (reason === 'time') {
                     message.channel.send(
                         `${message.author}, it's been a minute without a battle. Please start a new battle.`
                     );
@@ -108,7 +108,7 @@ module.exports = {
                 author: {
                     name: `Uh Oh!`,
                     icon_url: `${message.author.displayAvatarURL()}`,
-                    url: "",
+                    url: '',
                 },
             });
         }

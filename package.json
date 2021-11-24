@@ -1,28 +1,37 @@
 {
-  "name": "bot",
-  "version": "1.0.0",
-  "description": "--- <br>",
-  "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Ryahn/Lord-Ainz-Bot.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Ryahn/Lord-Ainz-Bot/issues"
-  },
-  "homepage": "https://github.com/Ryahn/Lord-Ainz-Bot#readme",
-  "dependencies": {
-    "chalk": "^4.1.2",
-    "discord.js": "^13.3.1",
-    "mongoose": "^6.0.12",
-    "winston": "^3.3.3"
-  }
+    "name": "bot",
+    "version": "1.0.0",
+    "description": "--- <br>",
+    "main": "index.js",
+    "directories": {
+        "lib": "lib"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "format": "prettier --write --single-quote --tab-width 4 --end-of-line lf --loglevel error *",
+        "dev": "nodemon shard.js",
+        "start": "pm2 start process.json --time",
+        "stop": "pm2 stop process.json",
+        "restart": "pm2 restart process.json"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Ryahn/Lord-Ainz-Bot.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Ryahn/Lord-Ainz-Bot/issues"
+    },
+    "homepage": "https://github.com/Ryahn/Lord-Ainz-Bot#readme",
+    "dependencies": {
+        "chalk": "^4.1.2",
+        "discord.js": "^13.3.1",
+        "glob": "^7.2.0",
+        "mongoose": "^6.0.12",
+        "winston": "^3.3.3"
+    },
+    "devDependencies": {
+        "eslint": "^8.3.0"
+    }
 }

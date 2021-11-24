@@ -1,7 +1,7 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 module.exports = mongoose.model(
-    "Member",
+    'Member',
     new mongoose.Schema({
         id: { type: String }, //ID of the user
         guild: { type: String }, //ID of the guild

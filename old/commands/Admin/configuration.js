@@ -1,14 +1,14 @@
 module.exports = {
-    name: "configuration",
+    name: 'configuration',
     usage: [
-        "Get the current configurations for this server.",
-        "Get list of configurations ```{prefix}configuration```",
+        'Get the current configurations for this server.',
+        'Get list of configurations ```{prefix}configuration```',
     ],
     enabled: true,
-    aliases: ["config"],
-    category: "Admin",
-    memberPermissions: ["ADMINISTRATOR"],
-    botPermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
+    aliases: ['config'],
+    category: 'Admin',
+    memberPermissions: ['ADMINISTRATOR'],
+    botPermissions: ['SEND_MESSAGES', 'EMBED_LINKS'],
     //Settings for command
     nsfw: false,
     ownerOnly: false,
@@ -45,7 +45,7 @@ module.exports = {
                 author: {
                     name: `Guild Configurations`,
                     icon_url: `${message.guild.iconURL()}`,
-                    url: "",
+                    url: '',
                 },
             });
         } catch (err) {
@@ -59,7 +59,7 @@ module.exports = {
                 author: {
                     name: `Uh Oh!`,
                     icon_url: `${message.author.displayAvatarURL()}`,
-                    url: "",
+                    url: '',
                 },
             });
         }
